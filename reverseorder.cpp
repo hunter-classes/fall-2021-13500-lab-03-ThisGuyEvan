@@ -45,4 +45,5 @@ void reverse_order(std::string date1, std::string date2){
   }
   revChro.insert(0, "\n");
   std::cout << revChro;
+  revChro = "";
 }
