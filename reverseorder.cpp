@@ -6,7 +6,6 @@ Assignment: Lab_3 D
 Create a function that prints out all values from a date interval in reverse.
 */
 
-
 #include <algorithm>
 #include <iostream>
 #include <fstream>
