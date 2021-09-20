@@ -27,8 +27,9 @@ std::ifstream get_file(){
   }
   std::string junk;
   getline(file, junk);
-
+  
   return file;
+
 }
 
 
@@ -41,6 +42,7 @@ double get_east_storage(std::string date){
       file.ignore(INT_MAX, '\n');  
                        
       if (dCheck == date){
+        file.close();
         return std::stof(eastSt);
       } 
   }
@@ -61,6 +63,7 @@ double get_min_east(){
         min = std::stod(eastSt);
       }
   }
+  file.close();
   return min;
 }
 
@@ -78,6 +81,7 @@ double get_max_east(){
         max = std::stod(eastSt);
       }
   }
+  file.close();
   return max;
 }
 
@@ -91,6 +95,7 @@ std::string compare_basin(std::string date){
     file.ignore(INT_MAX, '\n');
       
     if (date == dCheck){
+      file.close();
       if (stod(eastSt) == stod(westSt)){
         return "Equal ";
       }

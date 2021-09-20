@@ -5,7 +5,6 @@ Instructor: Mike Zamansky
 Assignment: Lab_3 D
 Create a function that prints out all values from a date interval in reverse.
 */
-
 #include <algorithm>
 #include <iostream>
 #include <fstream>
@@ -13,6 +12,8 @@ Create a function that prints out all values from a date interval in reverse.
 #include <climits>
 #include <string>
 #include "reverseorder.h"
+#include "reservoir.h"
+
 
 void reverse_order(std::string date1, std::string date2){
   std::ifstream file("Current_Reservoir_Levels.tsv");
@@ -23,10 +24,10 @@ void reverse_order(std::string date1, std::string date2){
   }
   std::string junk;
   getline(file, junk);
-  
+ 
   std::string date, eastSt, eastEl, westSt, westEl; 
   std::string revChro = "";
-  bool inter;
+  bool inter = false;
   
   while(file >> date >> eastSt >> eastEl >> westSt >> westEl) { 
     file.ignore(INT_MAX, '\n');
@@ -40,10 +41,10 @@ void reverse_order(std::string date1, std::string date2){
     }
     
     if (date == date2){
+      file.close();
       break;
     }
   }
   revChro.insert(0, "\n");
   std::cout << revChro;
-  revChro = "";
 }
