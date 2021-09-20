@@ -1,4 +1,3 @@
-  
 /*
 Author: Evan Huang
 Course: CS 135
@@ -29,6 +28,7 @@ std::ifstream get_file(){
   std::string junk;
   getline(file, junk);
 
+  file.close();
   return file;
 }
 
@@ -45,6 +45,7 @@ double get_east_storage(std::string date){
         return std::stof(eastSt);
       } 
   }
+  file.close();
   return 0;  
 }
 
@@ -62,6 +63,7 @@ double get_min_east(){
         min = std::stod(eastSt);
       }
   }
+  file.close();
   return min;
 }
 
@@ -79,6 +81,7 @@ double get_max_east(){
         max = std::stod(eastSt);
       }
   }
+  file.close();
   return max;
 }
 
@@ -103,5 +106,6 @@ std::string compare_basin(std::string date){
       }
     }
   }
+  file.close();
   return "";
 }
