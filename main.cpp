@@ -38,6 +38,8 @@ int main(){
 
   std::cout << "\n\nTask D:";
   reverse_order("05/29/2018", "06/02/2018");
+  reverse_order("06/29/2018", "07/02/2018");
+  reverse_order("08/29/2018", "09/02/2018");
 
   std::cout << std::endl;
   return 0;
