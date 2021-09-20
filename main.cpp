@@ -28,6 +28,7 @@ int main(){
 
 
   std::cout << "\n\nTask C:";
+  std::string date;
   date = "09/13/2018";
   std::cout << date << ": " << compare_basin(date);
   date = "09/30/2018";
